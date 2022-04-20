@@ -1,8 +1,19 @@
-const dogs = () => {
-  fetch(`/getdogs`)
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
-}
+/*
+ * Returns a promise for fetching dogs
+ */
+export const dogs = () => {
+  return fetch("/getdogs").then((res) => {
+    return res.json();
+  })
+    .then(data => {
+      return data
+  })
+  
+};
 
-export default dogs;
+/*
+ * url - The url of the character to be fetched
+ *
+ * Returns a promise for the fetching of a character
+ */
+
