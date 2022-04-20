@@ -1,7 +1,7 @@
 const dogs = () => {
-  fetch(`https://thedogapi.com/v1/images?api_key=${process.env.REACT_APP_API_KEY}`, {mode:'cors'})
+  fetch(`/getdogs`)
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(data => console.log(data))
     .catch(error => console.error(error));
 }
 
