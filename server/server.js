@@ -9,7 +9,6 @@ app.get('/getdogs', (req, res) => {
   const API = `https://api.thedogapi.com/v1/breeds?api_key=${key}`;
   axios(API)
     .then(response => {
-      console.log(response.data)
       res.json(response.data)
     }).catch(err => {
       res.send('errr!!!')

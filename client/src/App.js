@@ -1,37 +1,29 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-
+import './app.css'
 import { dogs } from './utils/fetchData'
+import DogGrid from './components/DogGrid';
 
 
 const App = () => {
 
   const [doggies, setDoggies] = useState([])
-
+  const [loading, setLoading] = useState(true);
   
   useEffect(() => {
     dogs().then(res => {
       setDoggies(res);
+      setLoading(false);
     })
   }, [])
 
-  let arrayDoggies = doggies.map((doggie, i) => {
-    return (
-      <div key = {i}>
-        <div>{doggie.name}</div>
-      </div>
-          )
-        })
-  
+ 
 
   return (
-    <div>
-      <div>Maloo</div>
-      <div>
-        {arrayDoggies}
-      </div>  
-
+    <div className='body'>
+      {loading ? <div>Loading...</div>  : <DogGrid className='dog-grid' dogs={doggies}/> }
+      
     </div>
   )
 }
