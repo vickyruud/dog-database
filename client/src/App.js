@@ -11,6 +11,7 @@ const App = () => {
   const [doggies, setDoggies] = useState([])
   const [loading, setLoading] = useState(true);
   
+  //loads the data from api
   useEffect(() => {
     dogs().then(res => {
       setDoggies(res);
