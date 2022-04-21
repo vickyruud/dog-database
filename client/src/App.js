@@ -5,6 +5,7 @@ import './app.css'
 import { dogs } from './utils/fetchData'
 import DogGrid from './components/DogGrid';
 import Loading from './components/Loading';
+import { DogCardNext } from './components/DogCardNext';
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
   //loads the data from api
   useEffect(() => {
     dogs().then(res => {
+      console.log(res);
       setDoggies(res);
       setTimeout(() => {
         setLoading(false);

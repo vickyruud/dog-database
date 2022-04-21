@@ -1,17 +1,7 @@
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 export const DogCardNext = (props) => (
-  <Card cover css={{ w: "100%", p: 0 }}>
-    <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-      <Col>
-        <Text size={12} weight="bold" transform="uppercase" color="#9E9E9E">
-          {props.dog.name}
-        </Text>
-        <Text h3 color="white">
-          {props.dog.bred_for}
-        </Text>
-      </Col>
-    </Card.Header>
+  <Card cover css={{ w: "30%", p: 0 }}>
     <Card.Body>
       <Card.Image
         src={props.dog.image.url}
@@ -33,12 +23,15 @@ export const DogCardNext = (props) => (
       <Row>
         <Col>
           <Row>
-           <Col>
+            <Col>
+               <Text size={12} weight="bold" transform="uppercase" color="#d1d1d1">
+                  {props.dog.name}
+                </Text>  
               <Text color="#d1d1d1" size={12}>
-                Height: {props.dog.height}
+                Height: {props.dog.height.metric} cms
               </Text>
               <Text color="#d1d1d1" size={12}>
-                Weight: {props.dog.weight}
+                Weight: {props.dog.weight.metric} kgs
               </Text>
             </Col>
           </Row>

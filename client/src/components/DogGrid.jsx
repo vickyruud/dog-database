@@ -1,14 +1,14 @@
 import React from 'react'
 import DogCard from './DogCard';
+import { DogCardNext } from './DogCardNext';
 
 const DogGrid = (props) => {
 
   //create array to render
   const arrayDogs = props.dogs.map((dog, i) => {
     return (
-      <div key={i} className="col-sm">
-      <DogCard  dog={dog}/>
-    </div>
+            <DogCardNext dog={dog} />
+
     )
   })
 
