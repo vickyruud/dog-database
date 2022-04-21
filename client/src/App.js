@@ -4,6 +4,7 @@ import { useState } from 'react';
 import './app.css'
 import { dogs } from './utils/fetchData'
 import DogGrid from './components/DogGrid';
+import Loading from './components/Loading';
 
 
 const App = () => {
@@ -14,7 +15,10 @@ const App = () => {
   useEffect(() => {
     dogs().then(res => {
       setDoggies(res);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+        
+      }, 3000);
     })
   }, [])
 
@@ -22,7 +26,7 @@ const App = () => {
 
   return (
     <div className='body'>
-      {loading ? <div>Loading...</div>  : <DogGrid className='dog-grid' dogs={doggies}/> }
+      {loading ? <Loading />  : <DogGrid className='dog-grid' dogs={doggies}/> }
       
     </div>
   )
