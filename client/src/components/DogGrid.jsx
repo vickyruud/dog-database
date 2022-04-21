@@ -3,7 +3,7 @@ import DogCard from './DogCard';
 
 const DogGrid = (props) => {
 
-  //renders the array of items
+  //create array to render
   const arrayDogs = props.dogs.map((dog, i) => {
     return (
       <div key={i} className="col-sm">
