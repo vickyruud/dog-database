@@ -1,26 +1,22 @@
-import { Grid, Card, Text } from "@nextui-org/react";
+import { Grid, Card } from "@nextui-org/react";
+import { DogCardNext } from "./DogCardNext";
 
-export default function App() {
-  const MockItem = ({ text }) => {
-    return (
-      <Card color="primary" css={{ h: "$24" }}>
-        <Text h6 size={15} color="white" css={{ mt: 0 }}>
-          {text}
-        </Text>
-      </Card>
-    );
-  };
+export default function DogGridNextUI(props) {
+
+   const arrayDogs = props.dogs.map((dog, i) => {
+     return (
+       <Grid key={i} xs={4}>
+          <Card  css={{ h: "15" }}>
+            <DogCardNext dog={dog} />
+            </Card>
+       </Grid>
+    )
+  })
+  
   return (
-    <Grid.Container gap={2} justify="center">
-      <Grid xs={4}>
-        <MockItem text="1 of 3" />
-      </Grid>
-      <Grid xs={4}>
-        <MockItem text="2 of 3" />
-      </Grid>
-      <Grid xs={4}>
-        <MockItem text="3 of 3" />
-      </Grid>
+    <Grid.Container gap={1} justify="center">
+      {arrayDogs}
+      
     </Grid.Container>
   );
 }

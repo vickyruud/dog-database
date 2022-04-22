@@ -1,12 +1,14 @@
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 export const DogCardNext = (props) => (
-  <Card cover css={{ w: "30%", p: 0 }}>
+
+  <Card  cover css={{ w: "100%", p: 0 }}>
     <Card.Body>
       <Card.Image
         src={props.dog.image.url}
-        height={400}
+        height={550}
         width="100%"
+        object-fit="scale-down"
         alt="dog background"
       />
     </Card.Body>
@@ -49,7 +51,7 @@ export const DogCardNext = (props) => (
                 size={12}
                 weight="bold"
                 transform="uppercase"
-              >
+                >
                 Click Me
               </Text>
             </Button>
