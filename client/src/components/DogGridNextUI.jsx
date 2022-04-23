@@ -7,7 +7,7 @@ export default function DogGridNextUI(props) {
      return (
        <Grid key={i} xs={4}>
           <Card  css={{ h: "15" }}>
-            <DogCardNext dog={dog} />
+            <DogCardNext handleOpen={props.handleOpen} dog={dog} />
             </Card>
        </Grid>
     )

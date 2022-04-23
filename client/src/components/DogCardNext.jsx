@@ -51,8 +51,9 @@ export const DogCardNext = (props) => (
                 size={12}
                 weight="bold"
                 transform="uppercase"
+                onClick={props.handleOpen}
                 >
-                Click Me
+                Learn More
               </Text>
             </Button>
           </Row>
