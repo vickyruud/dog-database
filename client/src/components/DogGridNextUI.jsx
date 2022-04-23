@@ -1,5 +1,5 @@
 import { Grid, Card } from "@nextui-org/react";
-import { DogCardNext } from "./DogCardNext";
+import DogCardNext from './DogCardNext'
 
 export default function DogGridNextUI(props) {
 
@@ -7,7 +7,7 @@ export default function DogGridNextUI(props) {
      return (
        <Grid key={i} xs={4}>
           <Card  css={{ h: "15" }}>
-            <DogCardNext handleOpen={props.handleOpen} dog={dog} />
+            <DogCardNext  setDogModal={props.setDogModal} handleOpen={props.handleOpen} handleClose={props.handleClose} dog={dog} />
             </Card>
        </Grid>
     )

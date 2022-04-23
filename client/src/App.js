@@ -16,7 +16,12 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [value, setValue] = useState('');
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const [dogModal, setDogModal] = useState({});
+
+  const handleOpen = (dog) => {
+    setOpen(true);
+    setDogModal(dog);
+  };
   const handleClose = () => setOpen(false);
 
   
@@ -60,8 +65,8 @@ const App = () => {
     <div className='body'>
       {/* {loading ? <Loading />  : <DogGrid className='dog-grid' dogs={doggies}/> } */}
       <Search handleSearch={handleSearch} value={value} setValue={setValue} clearSearch={clearSearch} />      
-      {loading ? <Loading /> : <DogGridNextUI handleOpen={handleOpen} className='dog-grid' dogs={searchResult} />}  
-      <DogModal open={open} handleClose={handleClose} />
+      {loading ? <Loading /> : <DogGridNextUI setDogModal={setDogModal} handleOpen={handleOpen} handleClose={handleClose} className='dog-grid' dogs={searchResult} />}  
+      <DogModal open={open} handleClose={handleClose} dogModal={dogModal} />      
     </div>
   )
 }

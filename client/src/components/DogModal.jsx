@@ -17,7 +17,7 @@ const style = {
 };
 
 export default function DogModal(props) {
-  
+  console.log(props.open);
 
   return (
     <div>
@@ -29,10 +29,10 @@ export default function DogModal(props) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+            {props.dogModal.name}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.            
           </Typography>
         </Box>
       </Modal>
