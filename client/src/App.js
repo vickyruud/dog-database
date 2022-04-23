@@ -16,7 +16,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [value, setValue] = useState('');
   const [open, setOpen] = useState(false);
-  const [dogModal, setDogModal] = useState({});
+  const [dogModal, setDogModal] = useState(null);
 
   const handleOpen = (dog) => {
     setOpen(true);
