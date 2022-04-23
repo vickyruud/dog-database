@@ -42,7 +42,10 @@ const App = () => {
   }
 
   const clearSearch = () => {
+    const searchValue = document.getElementById('searchField')
+
     setSearchResult(doggies);
+    searchValue.value = '';
     
   }
    
