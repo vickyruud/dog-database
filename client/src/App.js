@@ -38,6 +38,7 @@ const App = () => {
     })
   }, [])
 
+  //handles search terms and displays results
   const handleSearch = (value) => {
     setSearchResult(doggies.filter(dog => {
       if (dog.name.toLowerCase().includes((value.toLowerCase()))) {
@@ -50,6 +51,7 @@ const App = () => {
 
   }
 
+  //clears the search box.
   const clearSearch = () => {
     const searchValue = document.getElementById('searchField')
 
