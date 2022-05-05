@@ -11,9 +11,3 @@ export const dogs = () => {
   
 };
 
-/*
- * url - The url of the character to be fetched
- *
- * Returns a promise for the fetching of a character
- */
-
